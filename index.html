@@ -104,7 +104,9 @@
         e.preventDefault();
     }
     function tEnd(e) {
-        end.innerHTML = state.startX + " " + state.startY + " " + state.endX + " " + state.endY;
+        var diffX = Math.abs(state.startX - state.endX);
+        var diffY = Math.abs(state.startY - state.endY);
+        end.innerHTML = diffX + " " + diffY;
     }
 </script>
 </body>
