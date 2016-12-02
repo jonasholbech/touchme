@@ -84,18 +84,27 @@
     document.addEventListener('touchmove', tMove);
     document.addEventListener('touchend', tEnd);
 
+    var state = {
+        startX:null,
+        startY:null,
+        endX:null,
+        endY:null
+    };
     function tStart(e){
-
         var touch = e.touches[0];
-        start.innerHTML=touch.pageX + " " + touch.pageY;
+        state.startX=touch.pageX;
+        state.startY=touch.pageY;
+        start.innerHTML=state.startX + " " + state.startY;
     }
     function tMove(e) {
         var touch = e.touches[0];
-        move.innerHTML=touch.pageX + " " + touch.pageY;
+        state.endX=touch.pageX;
+        state.endY=touch.pageY;
+        move.innerHTML=state.endX + " " + state.endY;
+        e.preventDefault();
     }
     function tEnd(e) {
-        //var touch = e.touches[0];
-        //end.innerHTML=touch.pageX + " " + touch.pageY;
+        end.innerHTML = state.startX + " " + state.startY + " " + state.endX + " " + state.endY;
     }
 </script>
 </body>
