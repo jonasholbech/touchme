@@ -97,7 +97,7 @@
         var touch = e.touches[0];
         state.startX=touch.pageX;
         state.startY=touch.pageY;
-        start.innerHTML=state.startX + " " + state.startY;
+        start.innerHTML=state.startX + " " + state.startY + " " + e.touches.length;
     }
     function tMove(e) {
         var touch = e.touches[0];
