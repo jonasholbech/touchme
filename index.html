@@ -107,6 +107,19 @@
         var diffX = Math.abs(state.startX - state.endX);
         var diffY = Math.abs(state.startY - state.endY);
         end.innerHTML = diffX + " " + diffY;
+        if(diffX > diffY){
+            //must be horizontal
+            if(state.startX > state.endX){
+                //left
+                nav.classList.add('hidden')
+            } else {
+                //right
+                nav.classList.remove('hidden')
+            }
+        } else {
+            //vertical
+
+        }
     }
 </script>
 </body>
